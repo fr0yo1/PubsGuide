@@ -28,6 +28,8 @@ class PubViewController: UIViewController, Storyboarded {
         PubsRepository.shared.addToFavorites(pub: self.pub)
     }
     
+    private var locationManager: CLLocationManager = CLLocationManager()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController!.setNavigationBarHidden(false, animated: true)
@@ -35,6 +37,7 @@ class PubViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.locationManager.requestWhenInUseAuthorization()
         setUpNavBar()
         populate()
 
@@ -62,6 +65,7 @@ class PubViewController: UIViewController, Storyboarded {
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         self.map.setRegion(coordinateRegion, animated: true)
         self.map.addAnnotation(annotation)
+        self.map.showsUserLocation = true
     }
 
     private func subscribeToNotifications() {

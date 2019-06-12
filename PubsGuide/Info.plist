@@ -2,9 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationUsageDescription</key>
-	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We want to help you find your way to this location.</string>
+	<key>NSLocationUsageDescription</key>
 	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string>This application needs to use the camera of the device</string>
